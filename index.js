@@ -245,7 +245,6 @@ function stringSmash(strings) {
     return accumlator.concat(currentValue);
   });
 
-  //return string with all entries combined together
   return combinedString;
 }
 
@@ -264,8 +263,13 @@ function stringSmash(strings) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  const runnersArray = runners.map(function (runner) {
+    return `${runner.last_name}, ${runner.first_name}`;
+  });
+
+  return runnersArray;
 }
 
 /**
