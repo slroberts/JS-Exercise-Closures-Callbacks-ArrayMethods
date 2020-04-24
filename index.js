@@ -239,8 +239,14 @@ function removeApple(strings) {
  *
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
  */
-function stringSmash(/* code here */) {
+function stringSmash(strings) {
   /* code here */
+  const combinedString = strings.reduce(function (accumlator, currentValue) {
+    return accumlator.concat(currentValue);
+  });
+
+  //return string with all entries combined together
+  return combinedString;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
