@@ -196,7 +196,6 @@ function isItAnApple(strings) {
     }
   });
 
-  //returns array containing true if apples and else false
   return booleanArr;
 }
 
@@ -216,8 +215,13 @@ function isItAnApple(strings) {
  *
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
  */
-function removeApple(/* code here */) {
+function removeApple(strings) {
   /* code here */
+  const newArray = strings.filter(function (string) {
+    return string !== "apple";
+  });
+
+  return newArray;
 }
 
 /**
