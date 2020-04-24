@@ -311,7 +311,7 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
 
   const giventShirtSize = runners.filter(function (runner) {
-    return runner.shirt_size !== tShirtSize;
+    return runner.shirt_size === tShirtSize;
   });
 
   return giventShirtSize;
