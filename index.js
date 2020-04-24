@@ -350,6 +350,7 @@ function tallyUpDonations(runners) {
  * 1. What is the difference between counter1 and counter2?
  *
  * 2. Which of the two uses a closure? How can you tell?
+ * counter1 uses a closure because it utilizes counterMaker which is the higher order function of counter.
  *
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
  *
@@ -393,8 +394,17 @@ function counter2() {
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(maxCount) {
   /* CODE HERE */
+  let count = 0;
+
+  return function counter() {
+    if (count < maxCount) {
+      return count++;
+    } else if (count >= maxCount) {
+      return count;
+    }
+  };
 }
 
 /////////////// END OF CHALLENGE ///////////////
