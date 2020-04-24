@@ -349,8 +349,13 @@ function tallyUpDonations(runners) {
  *
  * 1. What is the difference between counter1 and counter2?
  *
+ * counter1 uses a closure and it stores the memory of the previous count so the numbers in the counter will increase when invoked.
+ * while on the other hand counter2 when invoked with only return the same number because the is no memory of the previous count.
+ *
  * 2. Which of the two uses a closure? How can you tell?
+ *
  * counter1 uses a closure because it utilizes counterMaker which is the higher order function of counter.
+ * counter() has access to the variables outside of it's scope.
  *
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
  *
