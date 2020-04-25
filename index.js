@@ -354,8 +354,9 @@ function tallyUpDonations(runners) {
  *
  * 2. Which of the two uses a closure? How can you tell?
  *
- * counter1 uses a closure because it utilizes counterMaker which is the higher order function of counter.
- * counter() has access to the variables outside of it's scope.
+ *
+ * counter1 uses a closure because it utilizes counterMaker which is the higher order function of the closure counter.
+ * counter() has access to the outer function counterMaker's variable.
  *
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
  *
@@ -399,17 +400,20 @@ function counter2() {
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit(maxCount) {
+function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
   let count = 0;
 
-  return function counter() {
-    if (count < maxCount) {
+  const counterMaker = function () {
+    do {
+      if (count > maxValue) {
+        count = 0;
+      }
       return count++;
-    } else if (count >= maxCount) {
-      return count;
-    }
+    } while (count <= maxValue);
   };
+
+  return counterMaker;
 }
 
 /////////////// END OF CHALLENGE ///////////////
