@@ -409,6 +409,7 @@ function counterMakerWithLimit(maxValue) {
       if (count > maxValue) {
         count = 0;
       }
+
       return count++;
     } while (count <= maxValue);
   };
