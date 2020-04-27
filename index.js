@@ -186,13 +186,15 @@ function lowerCaseStrings(strings) {
  */
 function isItAnApple(strings) {
   /* code here */
-  const booleanArr = [];
+  // const booleanArr = [];
 
-  strings.map(function (string) {
+  const booleanArr = strings.map(function (string) {
     if (string === "apple") {
-      return booleanArr.push(true);
+      // return booleanArr.push(true);
+      return true;
     } else {
-      return booleanArr.push(false);
+      // return booleanArr.push(false);
+      return false;
     }
   });
 
